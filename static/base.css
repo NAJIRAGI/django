@@ -1,0 +1,24 @@
+/*HEADER CSS*/
+.velog_header {
+    text-align:center; margin-bottom: 2rem 0;
+}
+.velog_header_writer {
+    font-family: 'Libre Barcode 39', cursive;
+}
+/*HEADER, FOOTER LOGO CSS*/
+.velog_logo {
+    font-family: 'Fredericka the Great', cursive;
+}
+
+
+/*FOOTER CSS*/
+.velog_footer_logo {
+    margin-top: 1rem;
+}
+.footer_nav {
+    font-size: .6rem;
+}
+.velog_footer {
+    text-align:center; margin-top: 2rem;
+}
+

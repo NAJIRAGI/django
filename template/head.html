@@ -1,3 +1,6 @@
+<!--static을 불러오기 위한 구문-->
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
     <title>Pragmatic</title>
@@ -11,4 +14,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap" rel="stylesheet">
+    <!--default css link-->
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
 </head>
