@@ -1,3 +1,4 @@
+from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 
 from accountapp.views import helloworld, AccountCreateView
@@ -9,4 +10,6 @@ urlpatterns = [
     path('helloworld/', helloworld, name='helloworld'),
                     # CBV에선 Class이름 뒤에 .as_view()를 붙인다.
     path('create/', AccountCreateView.as_view(), name='create'),
+    path('login/', LoginView.as_view(template_name = 'accountapp/login.html'), name = 'login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
 ]

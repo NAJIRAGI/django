@@ -7,6 +7,18 @@
             <span>nav1</span>
             <span>nav2</span>
             <span>nav3</span>
-            <span>nav4</span>
+            <!-- 유저가 로그인 안 되어 있을 경우 -->
+            {% if not user.is_authenticated %}
+            <!-- login 창으로 넘어가는 화면으로 전송되는 메뉴를 보여주고, url 값을 next 인자에 넣고 전달 -->
+            <a href="{% url 'accountapp:login' %}?next={{ request.path }}">
+                <span>login</span>
+            </a>
+            <!-- 유저가 로그인 되어 있을 경우 -->
+            {% else %}
+            <!-- logout 창으로 넘어가는 화면으로 전송되는 메뉴를 보여주고, url 값을 next 인자에 넣고 전달 -->
+            <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
+                <span>logout</span>
+            </a>
+            {% endif %}
         </div>
     </div>

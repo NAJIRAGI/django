@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
+from django.urls import reverse_lazy
 import os, environ
 env = environ.Env(
     # set casting, default value
@@ -140,3 +140,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# login, logout 시 next 값이 없을 때 사용할 LRU를 설정
+LOGIN_REDIRECT_URL = reverse_lazy('accountapp:helloworld')
+LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
