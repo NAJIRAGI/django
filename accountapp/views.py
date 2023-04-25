@@ -15,6 +15,7 @@ def helloworld(request):
         new_hello_world.text = temp
         # 해당 정보를 저장 (DB에 저장)
         new_hello_world.save()
+
         # 작업이 완료 된 뒤에는 'account/helloworld/'으로 재접속. (새로고침 시 DB에 Data가 중복되어 쌓이는 것을 방지)
         return HttpResponseRedirect(reverse('accountapp:helloworld'))
 
@@ -22,5 +23,5 @@ def helloworld(request):
     else:
         # 변수 hello_world_list에 HelloWorld DB안에 있는 모든 객체를 저장
         hello_world_list = HelloWorld.objects.all()
-                                                              #추가적인 Data 꾸러미 안에 'text'라는 이름을 가진 'GET METHOD!!'라는 내용을 넣어서 저장
+                                                              # 추가적인 Data 꾸러미 안에 'text'라는 이름을 가진 'GET METHOD!!'라는 내용을 넣어서 저장
         return render(request, 'accountapp/hello_world.html', context={'hello_world_list':hello_world_list})
