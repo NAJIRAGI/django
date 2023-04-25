@@ -20,12 +20,16 @@
           </div>
       </form>
 
-      <!-- views.py에서 hello_world_output이 존재한다면 -->
-      {% if hello_world_output %}
-      <h1>
-          <!-- hello_world_output의 text를 불러오기 -->
-          {{ hello_world_output.text }}
-      </h1>
+      <!-- views.py에서 hello_world_list가 존재한다면 -->
+      {% if hello_world_list %}
+        <!-- hello_world 안에 있는 hello_world_list(배열)을 반복해서 -->
+        {% for hello_world in hello_world_list %}
+          <h4>
+              <!-- hello_world안에 text를 불러오기 -->
+              {{ hello_world.text }}
+          </h4>
+        <!-- for문 종료 -->
+        {% endfor %}
       <!-- if문 종료 -->
       {% endif %}
     </div>
