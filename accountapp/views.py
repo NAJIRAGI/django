@@ -3,8 +3,9 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView, DetailView
+from django.views.generic import CreateView, DetailView, UpdateView
 
+from accountapp.forms import AccountUpdateForm
 from accountapp.models import HelloWorld
 
 
@@ -49,4 +50,8 @@ class AccountDetailView(DetailView):
     # 읽어온 정보를 출력할 template만 필요하므로 template_name만 필요.
     template_name = 'accountapp/detail.html'
 
-
+class AccountUpdateView(UpdateView):
+    model = User
+    form_class = AccountUpdateForm
+    success_url = reverse_lazy('accountapp:helloworld')
+    template_name = 'accountapp/update.html'
