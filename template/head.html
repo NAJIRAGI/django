@@ -23,6 +23,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
+    <!-- 다운로드 받은 Font 파일 적용 -->
+    <style>
+        @font-face {
+            font-family: 'NanumSquareNeoOTF-Bd';
+            src: local('NanumSquareNeoOTF-Bd'),
+            url("{% static 'fonts/NanumSquareNeoOTF-Bd.otf' %}") format("opentype");
+        }
+         @font-face {
+            font-family: 'NanumSquareNeoOTF-Eb';
+            src: local('NanumSquareNeoOTF-Eb'),
+            url("{% static 'fonts/NanumSquareNeoOTF-Eb.otf' %}") format("opentype");
+        }
+         @font-face {
+            font-family: 'NanumSquareNeoOTF-Hv';
+            src: local('NanumSquareNeoOTF-Hv'),
+            url("{% static 'fonts/NanumSquareNeoOTF-Hv.otf' %}") format("opentype");
+        }
+         @font-face {
+            font-family: 'NanumSquareNeoOTF-Lt';
+            src: local('NanumSquareNeoOTF-Lt'),
+            url("{% static 'fonts/NanumSquareNeoOTF-Lt.otf' %}") format("opentype");
+        }
+         @font-face {
+            font-family: 'NanumSquareNeoOTF-Rg';
+            src: local('NanumSquareNeoOTF-Rg'),
+            url("{% static 'fonts/NanumSquareNeoOTF-Rg.otf' %}") format("opentype");
+        }
+    </style>
+
     <!--default css link-->
     <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
 </head>
