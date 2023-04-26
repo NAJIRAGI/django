@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
 
 from accountapp.models import HelloWorld
 
@@ -39,4 +39,14 @@ class AccountCreateView(CreateView):
                   # revers_lazy 함수는 url이 필요한 시점에 url을 생성하고 반환한다. 현재 구문에서 success_url (성공 시) 이기 때문에 reverse_lazy를 사용.
     success_url = reverse_lazy('accountapp:helloworld') # 성공 시 어느 url로 전달할 것인가?
     template_name = 'accountapp/create.html' # 어떤 template를 보여줄 것인가?
+
+# Django Generic에 있는 DetailView를 상속 받는 Class 생성
+class AccountDetailView(DetailView):
+    # Django 기본제공 Model - User 사용
+    model = User
+    # 다른 사람의 정보를 볼 때 기본 user 사용 시 내 정보를 투영하여 보기 때문에 따로 설정이 필요
+    context_object_name = 'target_user'
+    # 읽어온 정보를 출력할 template만 필요하므로 template_name만 필요.
+    template_name = 'accountapp/detail.html'
+
 
